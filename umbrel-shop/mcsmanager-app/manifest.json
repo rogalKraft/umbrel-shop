@@ -1,9 +1,9 @@
 {
-  "id": "mcsmanager",
+  "id": "rogalkraft-mcsmanager",
   "name": "MCSManager Panel",
   "description": "Local web panel to manage Minecraft servers",
   "version": "1.0.0",
   "icon": "icon.png",
   "dockerCompose": "docker-compose.yml",
-  "maintainer": "Empty"
+  "maintainer": "Rogalkraft"
 }
