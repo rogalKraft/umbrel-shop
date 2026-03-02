@@ -1,0 +1,10 @@
+manifestVersion: 1
+id: rogalkraft-mcsmanager
+category: tools
+name: MCSManager Panel
+version: "1.0.0"
+description: Web panel to manage Minecraft servers
+tags: ["minecraft","panel"]
+maintainer: "rogalKraft"
+gallery: []
+releaseNotes: ""
