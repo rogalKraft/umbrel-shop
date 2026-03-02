@@ -1,26 +1,22 @@
-version: '3.7'
+version: "3.7"
 
 services:
-  mcsmanager-web:
+  web:
     image: githubyumao/mcsmanager-web:latest
-    container_name: mcsmanager-web
+    restart: unless-stopped
     environment:
       - PORT=23333
       - MC_PATH=/minecraft
     volumes:
-      - ./data:/minecraft
-    ports:
-      - "23333:23333"
-    restart: unless-stopped
+      - ${APP_DATA_DIR}/data:/minecraft
+    depends_on:
+      - daemon
 
-  mcsmanager-daemon:
+  daemon:
     image: githubyumao/mcsmanager-daemon:latest
-    container_name: mcsmanager-daemon
+    restart: unless-stopped
     environment:
       - PORT=23334
-      - WEBHOOK=http://mcsmanager-web:23333
+      - WEBHOOK=http://web:23333
     volumes:
-      - ./data:/minecraft
-    ports:
-      - "23334:23334"
-    restart: unless-stopped
+      - ${APP_DATA_DIR}/data:/minecraft
